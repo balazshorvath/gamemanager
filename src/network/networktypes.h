@@ -43,7 +43,7 @@ __inline int socket_set_timeout(Socket* socket, int ms){
     timeout.tv_sec = 0;
     timeout.tv_usec = ms * 1000;
 
-	return setsockopt socket->socket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
+	return setsockopt(socket->socket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
 
 }
 

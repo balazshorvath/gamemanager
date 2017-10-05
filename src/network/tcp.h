@@ -66,3 +66,4 @@ int tcp_write(Socket* socket, const char* buffer, int size);
 */
 int tcp_read(Socket* socket, char* buffer, int size);
 
+#endif /* TCP_H */
