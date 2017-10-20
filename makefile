@@ -5,7 +5,9 @@ IDIRFLAG=-I./$(SDIR)
 
 include *.mk
 
-compile: outFolder compileNetwork
+compile: outFolder compileNetwork compileMath
+
+check: checkNetwork checkMath
 
 outFolder:
 	mkdir -p $(ODIR)

@@ -1,12 +1,10 @@
 NEWTORKROOT=$(SDIR)/network
+NETWORK_OFILES=$(subst $(NEWTORKROOT),$(ODIR),$(patsubst %.c,%.o,$(wildcard $(NEWTORKROOT)/*.c)))
 
-compileNetwork: outFolder $(ODIR)/tcp.o
-	cd $(NEWTORKROOT)
-	mv *.o $(ODIR)
-	cd -
+compileNetwork: outFolder $(NETWORK_OFILES)
 
-$(ODIR)/tcp.o: $(NEWTORKROOT)/tcp.c $(NEWTORKROOT)/tcp.h $(NEWTORKROOT)/networktypes.h
-	$(CC) -c $< -I./$(SDIR)
-
+$(ODIR)/%.o: $(NEWTORKROOT)/%.c $(NEWTORKROOT)/%.h $(NEWTORKROOT)/networktypes.h
+	$(CC) -c $< -o $@ $(CFLAGS) $(IDIRFLAG)
+	
 checkNetwork:
 	$(CC) -fsyntax-only $(wildcard $(NEWTORKROOT)/*.c) $(IDIRFLAG)

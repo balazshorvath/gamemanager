@@ -66,28 +66,4 @@ int tcp_write(Socket* socket, const char* buffer, int size);
 */
 int tcp_read(Socket* socket, char* buffer, int size);
 
-//
-// Socket functions
-//
-
-/** 
-* Closes the socket and frees the memory for the structure.
-* 
-* @param socket pointer Socket struct created by tcp_connect
-*
-* @retrun 0, if succeeded; non-zero otherwise
-*/
-int tcp_close(Socket* socket);
-
-/** 
-* Sets the socket to be in non-blocking mode.
-* 
-* @param socket pointer to Socket.
-* @param ms amount of time in milliseconds for the read to return.
-*
-* @retrun 0 if success, non-zero otherwise 
-*/
-int tcp_set_timeout(Socket* socket, int ms);
-
-
 #endif /* TCP_H */
