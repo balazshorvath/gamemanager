@@ -8,14 +8,14 @@ typedef struct Area_ Area;
 typedef struct World_ World;
 typedef struct WorldConfig_ WorldConfig;
 
-typedef struct Entity_ {
+struct Entity_ {
 	int id;
 	int state;
 	char session[32];
 	Vec3 position, speed, acceleration;
 };
 
-typedef struct Area_ {
+struct Area_ {
 	Vec3* edges;
 	int edgeCount;
 	/** 
@@ -27,7 +27,7 @@ typedef struct Area_ {
 	World* world;
 };
 
-typedef struct World_ {
+struct World_ {
 	Entity* entities;
 	Area* areas;
 	
@@ -38,7 +38,7 @@ typedef struct World_ {
 	int mapWidth;
 };
 
-typedef struct WorldConfig_ {
+struct WorldConfig_ {
 	int maxEntityCount;
 	int maxAreaCount;
 	

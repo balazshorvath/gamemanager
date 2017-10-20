@@ -1,6 +1,7 @@
 #include <math.h>
 
 #include "math/vectors.h"
+#include "world.h"
 
 
 int world_init(World** world, WorldConfig* config) {
